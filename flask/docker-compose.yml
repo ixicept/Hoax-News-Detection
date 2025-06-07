@@ -1,0 +1,14 @@
+networks:
+  hoax_network:
+
+services:
+  flask:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: medsense_flask
+    restart: on-failure
+    networks:
+      - hoax_network
+    ports:
+      - "4998:4998"
